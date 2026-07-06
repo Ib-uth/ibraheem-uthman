@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="index, follow" />
+		<style>
+			html.w-mod-js:not(.w-mod-ix3)
+				:is([animate-chars], [animate-lines], [animate-chars-load], [animate-lines-load]) {
+				visibility: hidden !important;
+			}
+		</style>
+		<script>
+			!(function (o, c) {
+				var n = c.documentElement,
+					t = ' w-mod-';
+				n.className += t + 'js';
+				('ontouchstart' in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
+					(n.className += t + 'touch');
+			})(window, document);
+		</script>
+		<style>
+			* {
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-rendering: optimizeLegibility;
+			}
+		</style>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

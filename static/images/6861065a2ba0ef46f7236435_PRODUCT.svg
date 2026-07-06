@@ -1,0 +1,14 @@
+<svg width="720" height="174" viewBox="0 0 720 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Thunder';
+        src: url('https://cdn.prod.website-files.com/6851b535e97a9e6a0a0a70e4/6851b67e8dc319367b324719_Thunder-VF.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+      .hero-title { font-family: 'Thunder', Impact, sans-serif; font-size: 168px; font-weight: 800; fill: #000; letter-spacing: -0.02em; }
+    </style>
+  </defs>
+  <text class="hero-title" x="0" y="145">SOFTWARE</text>
+</svg>

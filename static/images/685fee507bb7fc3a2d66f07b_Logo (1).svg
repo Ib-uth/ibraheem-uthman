@@ -1,0 +1,14 @@
+<svg width="110" height="24" viewBox="0 0 110 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Thunder';
+        src: url('https://cdn.prod.website-files.com/6851b535e97a9e6a0a0a70e4/6851b67e8dc319367b324719_Thunder-VF.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+      .logo-text { font-family: 'Thunder', Impact, sans-serif; font-size: 22px; font-weight: 700; fill: #fff; letter-spacing: 0.02em; }
+    </style>
+  </defs>
+  <text class="logo-text" x="0" y="18">Ibraheem</text>
+</svg>

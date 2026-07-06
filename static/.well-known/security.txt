@@ -1,0 +1,4 @@
+Contact: mailto:hello@ibraheemuthman.com
+Expires: 2027-07-03T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://ibraheemuthman.com/.well-known/security.txt
