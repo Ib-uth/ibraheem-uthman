@@ -6,9 +6,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"deploy": "echo 'Published via Cloudflare Pages build output (.svelte-kit/cloudflare)'",
-		"pages:deploy": "wrangler pages deploy .svelte-kit/cloudflare --project-name=ibraheem-uthman",
-		"preview": "wrangler pages dev .svelte-kit/cloudflare",
+		"deploy": "wrangler deploy",
+		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
