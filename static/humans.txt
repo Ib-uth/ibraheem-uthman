@@ -3,6 +3,13 @@ Developer: Ibraheem Uthman
 Site: https://ibraheemuthman.com
 Location: Abuja, Nigeria
 Contact: hello@ibraheemuthman.com
+Twitter: @ibraheemuthman
+GitHub: github.com/ibraheemuthman
+LinkedIn: linkedin.com/in/ibraheemuthman
+
+/* SITE */
+Software & Security Engineer
+Full-stack engineering, DevSecOps, detection engineering, cloud security
 
 /* THANKS */
-Stack: SvelteKit, GSAP, Lenis
+Stack: SvelteKit, Vercel, GSAP, Lenis, Resend

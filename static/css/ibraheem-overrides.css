@@ -18,6 +18,21 @@
 	--_colors---color--light: var(--color-bg-light);
 }
 
+/* Blog article titles — wrap by word, not by letter */
+.hero-product .headline-project .blog-title,
+.hero-product .headline-project h2.blog-title {
+	word-break: normal;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	white-space: normal;
+}
+
+.hero-product .headline-project .blog-title .line,
+.hero-product .headline-project h2.blog-title .line {
+	display: block;
+	overflow: hidden;
+}
+
 /* Neutral base colors — body, sections, nav, footer */
 body {
 	background-color: var(--color-bg-light);

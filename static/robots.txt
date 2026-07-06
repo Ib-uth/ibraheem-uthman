@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ibraheemuthman.com/sitemap.xml
+# Machine-readable site summary for LLMs and agents
+# https://ibraheemuthman.com/llms.txt
 
-# LLM-readable site summary: https://ibraheemuthman.com/llms.txt
+Sitemap: https://ibraheemuthman.com/sitemap.xml

@@ -2,12 +2,15 @@ import { projects } from '$lib/data/projects';
 import { posts } from '$lib/data/posts';
 import {
 	DEFAULT_DESCRIPTION,
+	DEFAULT_OG_IMAGE,
 	SITE_EMAIL,
+	SITE_LOCATION,
 	SITE_NAME,
+	SITE_TAGLINE,
 	SITE_URL,
 	SOCIAL_PROFILES
 } from '$lib/constants/site';
-import { SITEMAP_STATIC_PATHS } from '$lib/seo';
+import { absoluteUrl, SITEMAP_STATIC_PATHS } from '$lib/seo';
 
 export const prerender = true;
 
@@ -19,16 +22,18 @@ function loc(path: string): string {
 
 const STATIC_PAGES: Record<string, string> = {
 	'/': 'Home — software and security engineering portfolio',
-	'/about': 'Background, experience, and how I work',
-	'/services': 'Full-stack engineering, DevSecOps, detection engineering, cloud security, pentesting',
-	'/work': 'Selected projects in software, fintech, and security',
-	'/blog': 'Writing on payments, CI/CD, detection engineering, and system design',
+	'/about': 'Background, experience, principles, and how I work',
+	'/services':
+		'Full-stack engineering, API design, DevSecOps, detection engineering, cloud security, penetration testing',
+	'/work': 'Selected projects in software, fintech, literary publishing, and security',
+	'/blog': 'Writing on payments, CI/CD, detection engineering, failure modeling, and system design',
 	'/contact': 'Get in touch for engineering or security work'
 };
 
 export function GET() {
 	const staticLinks = SITEMAP_STATIC_PATHS.map(
-		(path) => `- [${path === '/' ? 'Home' : path.slice(1).replace(/^\w/, (c) => c.toUpperCase())}](${loc(path)}): ${STATIC_PAGES[path]}`
+		(path) =>
+			`- [${path === '/' ? 'Home' : path.slice(1).replace(/^\w/, (c) => c.toUpperCase())}](${loc(path)}): ${STATIC_PAGES[path]}`
 	).join('\n');
 
 	const projectLinks = projects
@@ -43,7 +48,16 @@ export function GET() {
 
 > ${DEFAULT_DESCRIPTION}
 
-Software and security engineer based in Abuja, Nigeria. I build full-stack systems, secure APIs, and detection pipelines. Reach me at ${SITE_EMAIL}.
+${SITE_NAME} is a ${SITE_TAGLINE.toLowerCase()} based in ${SITE_LOCATION}. He builds full-stack systems, secure APIs, and detection pipelines. Primary contact: ${SITE_EMAIL}.
+
+## Identity
+
+- Name: ${SITE_NAME}
+- Role: ${SITE_TAGLINE}
+- Location: ${SITE_LOCATION}
+- Email: ${SITE_EMAIL}
+- Website: ${SITE_URL}
+- Portrait: ${absoluteUrl(DEFAULT_OG_IMAGE)}
 
 ## Main pages
 
@@ -57,11 +71,18 @@ ${projectLinks}
 
 ${postLinks}
 
+## Social profiles
+
+- GitHub: ${SOCIAL_PROFILES[0]}
+- LinkedIn: ${SOCIAL_PROFILES[1]}
+- Twitter/X: ${SOCIAL_PROFILES[2]}
+- Instagram: ${SOCIAL_PROFILES[3]}
+
 ## Optional
 
 - [Sitemap](${loc('/sitemap.xml')}): machine-readable list of all public URLs
-- [GitHub](${SOCIAL_PROFILES[0]}): open-source work and code samples
-- [LinkedIn](${SOCIAL_PROFILES[1]}): professional profile
+- [Humans.txt](${loc('/humans.txt')}): site credits and contact
+- [Security.txt](${loc('/.well-known/security.txt')}): security contact information
 `;
 
 	return new Response(body, {

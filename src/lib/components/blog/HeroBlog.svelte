@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { animateCharsLoad } from '$lib/actions/animateText';
+	import { animateLinesLoad } from '$lib/actions/animateText';
 	import type { Post } from '$lib/data/posts';
 
 	let { post }: { post: Post } = $props();
@@ -8,7 +8,7 @@
 <section class="section hero-product">
 	<div class="w-layout-blockcontainer main-container w-container">
 		<div class="headline-project">
-			<h2 class="no-margins" animate-chars-load use:animateCharsLoad>{post.title}</h2>
+			<h2 class="no-margins blog-title" animate-lines-load use:animateLinesLoad>{post.title}</h2>
 		</div>
 		<div class="info-line-cms">
 			<div class="info-block-cms left">
