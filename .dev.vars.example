@@ -1,7 +1,7 @@
-# Local secrets for `pnpm preview` (Wrangler Pages dev).
-# Copy to .dev.vars and fill in values. Do not commit .dev.vars.
+# Deprecated — use .env for local development (see .env.example).
+# Kept for reference; copy values into .env instead.
 
 RESEND_API_KEY=re_your_api_key
 CONTACT_FROM_EMAIL=Ibraheem Uthman <hello@ibraheemuthman.com>
 CONTACT_NOTIFY_EMAILS=hello@ibraheemuthman.com,uthibraheem@gmail.com
-PUBLIC_SITE_URL=http://localhost:8788
+PUBLIC_SITE_URL=http://localhost:5173
