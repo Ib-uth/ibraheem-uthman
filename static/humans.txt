@@ -5,5 +5,4 @@ Location: Abuja, Nigeria
 Contact: hello@ibraheemuthman.com
 
 /* THANKS */
-Template: Solinova (Webflow)
 Stack: SvelteKit, GSAP, Lenis

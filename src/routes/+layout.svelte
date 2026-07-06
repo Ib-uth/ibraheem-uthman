@@ -46,8 +46,8 @@
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="/css/solinova.shared.42a3f9a30.min.css" />
-	<link rel="stylesheet" href="/css/solinova-overrides.css" />
+	<link rel="stylesheet" href="/css/ibraheem.shared.min.css" />
+	<link rel="stylesheet" href="/css/ibraheem-overrides.css" />
 	<link rel="icon" href="/favicon.ico" sizes="any" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

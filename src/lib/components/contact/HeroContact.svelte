@@ -5,6 +5,8 @@
 
 	type FormState = 'idle' | 'success' | 'error';
 
+	const requiredMark = '*';
+
 	let name = $state('');
 	let email = $state('');
 	let phone = $state('');
@@ -95,53 +97,78 @@
 					name="email-form"
 					class:hide={formState === 'success'}
 					onsubmit={handleSubmit}
-					novalidate
 				>
 					<div class="form-contact-inner">
-						<input
-							class="text-field w-input"
-							maxlength="100"
-							name="name"
-							placeholder="NAME"
-							type="text"
-							id="name"
-							required
-							autocomplete="name"
-							bind:value={name}
-						/>
-						<input
-							class="text-field w-input"
-							maxlength="254"
-							name="email"
-							placeholder="EMAIL"
-							type="email"
-							id="email"
-							required
-							autocomplete="email"
-							inputmode="email"
-							bind:value={email}
-						/>
-						<input
-							class="text-field w-input"
-							maxlength="30"
-							name="phone"
-							placeholder="PHONE NUMBER"
-							type="tel"
-							id="phone"
-							required
-							autocomplete="tel"
-							inputmode="tel"
-							bind:value={phone}
-						/>
-						<textarea
-							required
-							placeholder="DROP ME A MESSAGE"
-							maxlength="5000"
-							id="message"
-							name="message"
-							class="text-field textarea w-input"
-							bind:value={message}
-						></textarea>
+						<div class="contact-field">
+							<label class="contact-label" for="name">
+								NAME <span class="contact-required" aria-hidden="true">{requiredMark}</span>
+							</label>
+							<input
+								class="text-field w-input"
+								maxlength="100"
+								name="name"
+								placeholder="YOUR NAME"
+								type="text"
+								id="name"
+								required
+								aria-required="true"
+								autocomplete="name"
+								bind:value={name}
+							/>
+						</div>
+						<div class="contact-field">
+							<label class="contact-label" for="email">
+								EMAIL <span class="contact-required" aria-hidden="true">{requiredMark}</span>
+							</label>
+							<input
+								class="text-field w-input"
+								maxlength="254"
+								name="email"
+								placeholder="YOU@EXAMPLE.COM"
+								type="email"
+								id="email"
+								required
+								aria-required="true"
+								autocomplete="email"
+								inputmode="email"
+								bind:value={email}
+							/>
+						</div>
+						<div class="contact-field">
+							<label class="contact-label" for="phone">
+								PHONE NUMBER <span class="contact-required" aria-hidden="true">{requiredMark}</span>
+							</label>
+							<input
+								class="text-field w-input"
+								maxlength="30"
+								name="phone"
+								placeholder="+234 801 234 5678"
+								type="tel"
+								id="phone"
+								required
+								aria-required="true"
+								autocomplete="tel"
+								inputmode="tel"
+								minlength="7"
+								bind:value={phone}
+							/>
+						</div>
+						<div class="contact-field">
+							<label class="contact-label" for="message">
+								MESSAGE <span class="contact-required" aria-hidden="true">{requiredMark}</span>
+							</label>
+							<textarea
+								required
+								aria-required="true"
+								minlength="10"
+								placeholder="DROP ME A MESSAGE"
+								maxlength="5000"
+								id="message"
+								name="message"
+								class="text-field textarea w-input"
+								bind:value={message}
+							></textarea>
+						</div>
 						<div class="contact-honeypot" aria-hidden="true">
 							<label for="company">Company</label>
 							<input
@@ -153,6 +180,10 @@
 								bind:value={company}
 							/>
 						</div>
+						<p class="contact-required-note">
+							<span class="contact-required" aria-hidden="true">{requiredMark}</span>
+							<span>All fields are required</span>
+						</p>
 						<input
 							type="submit"
 							class="cta-main w-button"

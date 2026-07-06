@@ -1,4 +1,4 @@
-/* Solinova asset URL overrides for SvelteKit */
+/* Ibraheem Uthman portfolio theme overrides for SvelteKit */
 
 /* Site color palette */
 :root {
@@ -13,7 +13,7 @@
 	--color-tag-2: #2f4a63;
 	--color-tag-3: #7ea6c9;
 
-	/* Map Webflow template neutrals to new palette */
+	/* Map legacy template neutrals to site palette */
 	--_colors---color--dark: var(--color-bg-dark);
 	--_colors---color--light: var(--color-bg-light);
 }
@@ -540,6 +540,44 @@ body {
 /* Awards preview images — hidden until hover interaction */
 .list-awards .awards-image {
 	pointer-events: none;
+}
+
+/* Contact form — required field markers match submit button color */
+.contact-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.contact-label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--color-bg-dark);
+}
+
+.contact-required {
+	color: var(--color-bg-dark);
+}
+
+.contact-required-note {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin: 0;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--color-bg-mid);
+}
+
+.hero-contact .text-field:required:user-invalid {
+	border-color: var(--color-bg-dark);
 }
 
 /* Mobile / tablet responsive fixes */

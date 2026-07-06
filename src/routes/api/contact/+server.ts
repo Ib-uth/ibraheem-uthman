@@ -103,5 +103,10 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 		return json({ error: 'Unable to send your message right now. Please try again later.' }, { status: 502 });
 	}
 
-	return json({ ok: true });
+	return json({ ok: true }, {
+		headers: {
+			'Cache-Control': 'no-store',
+			'X-Content-Type-Options': 'nosniff'
+		}
+	});
 };
