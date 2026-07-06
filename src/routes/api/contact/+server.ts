@@ -10,6 +10,9 @@ export const prerender = false;
 const MAX_BODY_BYTES = 12_000;
 
 function getClientIp(request: Request, getClientAddress: () => string): string {
+	const cfIp = request.headers.get('cf-connecting-ip');
+	if (cfIp) return cfIp;
+
 	try {
 		return getClientAddress();
 	} catch {
