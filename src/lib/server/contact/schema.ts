@@ -39,7 +39,11 @@ export const contactPayloadSchema = z.object({
 				.min(CONTACT_LIMITS.messageMin, 'Message is too short.')
 				.max(CONTACT_LIMITS.messageMax, 'Message is too long.')
 		),
-	company: z.string().max(0, 'Spam detected.'),
+	company: z
+		.string()
+		.optional()
+		.transform((value) => value ?? '')
+		.pipe(z.string().max(0, 'Spam detected.')),
 	formLoadedAt: z.coerce
 		.number()
 		.int()

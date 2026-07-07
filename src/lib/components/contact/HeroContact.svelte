@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { enhance } from '$app/forms';
 	import { animateCharsLoad } from '$lib/actions/animateText';
 	import { tagParallax } from '$lib/actions/interactions';
 
@@ -32,55 +33,12 @@
 		return null;
 	}
 
-	async function handleSubmit(event: SubmitEvent) {
-		event.preventDefault();
+	function handleSubmit(event: SubmitEvent) {
 		const error = validate();
 		if (error) {
+			event.preventDefault();
 			errorMessage = error;
 			formState = 'error';
-			return;
-		}
-
-		submitting = true;
-		formState = 'idle';
-
-		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json'
-				},
-				body: JSON.stringify({
-					name,
-					email,
-					phone,
-					message,
-					company,
-					formLoadedAt
-				})
-			});
-
-			const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-
-			if (!response.ok) {
-				errorMessage = payload?.error ?? 'Oops! Something went wrong while submitting the form.';
-				formState = 'error';
-				return;
-			}
-
-			formState = 'success';
-			name = '';
-			email = '';
-			phone = '';
-			message = '';
-			company = '';
-			formLoadedAt = Date.now();
-		} catch {
-			errorMessage = 'Unable to reach the server. Please try again in a moment.';
-			formState = 'error';
-		} finally {
-			submitting = false;
 		}
 	}
 </script>
@@ -95,10 +53,37 @@
 				<form
 					id="email-form"
 					name="email-form"
+					method="POST"
 					class:hide={formState === 'success'}
 					onsubmit={handleSubmit}
+					use:enhance={() => {
+						submitting = true;
+						formState = 'idle';
+						return async ({ result, update }) => {
+							submitting = false;
+							if (result.type === 'success') {
+								formState = 'success';
+								name = '';
+								email = '';
+								phone = '';
+								message = '';
+								company = '';
+								formLoadedAt = Date.now();
+								await update();
+							} else if (result.type === 'failure') {
+								formState = 'error';
+								errorMessage =
+									(result.data as { error?: string } | undefined)?.error ??
+									'Oops! Something went wrong while submitting the form.';
+							} else if (result.type === 'error') {
+								formState = 'error';
+								errorMessage = 'Unable to reach the server. Please try again in a moment.';
+							}
+						};
+					}}
 				>
 					<div class="form-contact-inner">
+						<input type="hidden" name="formLoadedAt" value={formLoadedAt} />
 						<div class="contact-field">
 							<label class="contact-label" for="name">
 								NAME <span class="contact-required" aria-hidden="true">{requiredMark}</span>
