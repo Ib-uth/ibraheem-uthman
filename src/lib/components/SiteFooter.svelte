@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { initFooterLinkBlur, initFooterMarquee } from '$lib/actions/animateText';
+	import { SOCIAL_LINKS } from '$lib/constants/site';
 
 	let cleanupBlur: (() => void) | undefined;
 	let cleanupMarquee: (() => void) | undefined;
@@ -43,10 +44,9 @@
 					<div class="column-footer">
 						<div class="text-bold">SOCIALS</div>
 						<div class="link-list-footer">
-							<a href="https://github.com" class="link-footer">GitHub</a>
-							<a href="https://linkedin.com" class="link-footer">LinkedIn</a>
-							<a href="https://twitter.com" class="link-footer">Twitter</a>
-							<a href="https://instagram.com/ibraheemuthman" class="link-footer">Instagram</a>
+							{#each SOCIAL_LINKS as link}
+								<a href={link.href} class="link-footer" rel="me noopener noreferrer" target="_blank">{link.label}</a>
+							{/each}
 						</div>
 					</div>
 				</div>

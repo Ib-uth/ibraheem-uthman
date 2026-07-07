@@ -30,13 +30,15 @@ export const SITE_TAGLINE = 'Software & Security Engineer';
 
 export const SITE_LOCATION = 'Abuja, Nigeria';
 
-export const TWITTER_HANDLE = '@ibraheemuthman';
+export const TWITTER_HANDLE = '@IbraheemUthman_';
 
 export const THEME_COLOR = '#12181f';
 
-export const SOCIAL_PROFILES = [
-	'https://github.com/ibraheemuthman',
-	'https://linkedin.com/in/ibraheemuthman',
-	'https://twitter.com/ibraheemuthman',
-	'https://instagram.com/ibraheemuthman'
+export const SOCIAL_LINKS = [
+	{ label: 'GitHub', href: 'https://github.com/ib-uth' },
+	{ label: 'LinkedIn', href: 'https://linkedin.com/in/ibraheem-uthman' },
+	{ label: 'X', href: 'https://x.com/IbraheemUthman_' },
+	{ label: 'Instagram', href: 'https://instagram.com/i.uthmaan' }
 ] as const;
+
+export const SOCIAL_PROFILES = SOCIAL_LINKS.map((link) => link.href);

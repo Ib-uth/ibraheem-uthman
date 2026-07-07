@@ -3,9 +3,10 @@ Developer: Ibraheem Uthman
 Site: https://ibraheemuthman.com
 Location: Abuja, Nigeria
 Contact: hello@ibraheemuthman.com
-Twitter: @ibraheemuthman
-GitHub: github.com/ibraheemuthman
-LinkedIn: linkedin.com/in/ibraheemuthman
+Twitter: @IbraheemUthman_
+GitHub: github.com/ib-uth
+LinkedIn: linkedin.com/in/ibraheem-uthman
+Instagram: instagram.com/i.uthmaan
 
 /* SITE */
 Software & Security Engineer
