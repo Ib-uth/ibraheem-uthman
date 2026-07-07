@@ -25,7 +25,7 @@ const STATIC_PAGES: Record<string, string> = {
 	'/about': 'Background, experience, principles, and how I work',
 	'/services':
 		'Full-stack engineering, API design, DevSecOps, detection engineering, cloud security, penetration testing',
-	'/work': 'Selected projects in software, fintech, literary publishing, and security',
+	'/project': 'Selected projects in software, fintech, literary publishing, and security',
 	'/blog': 'Writing on payments, CI/CD, detection engineering, failure modeling, and system design',
 	'/contact': 'Get in touch for engineering or security work'
 };
@@ -37,7 +37,7 @@ export function GET() {
 	).join('\n');
 
 	const projectLinks = projects
-		.map((project) => `- [${project.title}](${loc(`/work/${project.slug}`)}): ${project.description}`)
+		.map((project) => `- [${project.title}](${loc(`/project/${project.slug}`)}): ${project.description}`)
 		.join('\n');
 
 	const postLinks = posts

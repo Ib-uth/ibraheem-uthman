@@ -2,6 +2,8 @@
 	import { projects } from '$lib/data/projects';
 	import { animateChars } from '$lib/actions/animateText';
 	import { projectCard } from '$lib/actions/projectCard';
+
+	const featuredProjects = projects.slice(0, 3);
 </script>
 
 <section class="section home-work-section">
@@ -11,9 +13,9 @@
 		</div>
 		<div class="work w-dyn-list">
 			<div role="list" class="home-work-halves w-dyn-items">
-				{#each projects as project}
+				{#each featuredProjects as project}
 					<div role="listitem" class="home-work-item w-dyn-item">
-						<a href="/work/{project.slug}" class="link-cms w-inline-block" use:projectCard>
+						<a href="/project/{project.slug}" class="link-cms w-inline-block" use:projectCard>
 							{#if project.image}
 								<div class="image-wrap-project">
 									<img

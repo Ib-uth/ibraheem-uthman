@@ -14,7 +14,7 @@
 		<div class="title-work">
 			<h2 class="no-margins" animate-chars-load use:animateCharsLoad>FEATURED PROJECTS</h2>
 		</div>
-		<CmsTabs tabs={[...workTabs]} items={projects} basePath="/work" listClass="work" />
+		<CmsTabs tabs={[...workTabs]} items={projects} basePath="/project" listClass="work" />
 	</div>
 </section>
 <CtaSection />

@@ -4,6 +4,16 @@
   "framework": "sveltekit",
   "redirects": [
     {
+      "source": "/work",
+      "destination": "/project",
+      "permanent": true
+    },
+    {
+      "source": "/work/:path*",
+      "destination": "/project/:path*",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [{ "type": "host", "value": "ibraheemuthman.com" }],
       "destination": "https://www.ibraheemuthman.com/",

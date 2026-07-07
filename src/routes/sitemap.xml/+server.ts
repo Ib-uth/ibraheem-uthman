@@ -28,7 +28,7 @@ export function GET() {
 	);
 
 	const projectUrls = projects.map((project) =>
-		urlEntry(`/work/${project.slug}`, lastmod, 0.7, 'monthly')
+		urlEntry(`/project/${project.slug}`, lastmod, 0.7, 'monthly')
 	);
 
 	const postUrls = posts.map((post) => urlEntry(`/blog/${post.slug}`, lastmod, 0.7, 'monthly'));

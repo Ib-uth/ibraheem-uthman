@@ -28,7 +28,7 @@
 		basePath
 	}: {
 		items: CardItem[];
-		basePath: '/work' | '/blog';
+		basePath: '/project' | '/blog';
 	} = $props();
 </script>
 

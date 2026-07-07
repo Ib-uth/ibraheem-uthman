@@ -9,7 +9,7 @@
 	const menuLinks = [
 		{ href: '/about', label: 'About', num: '01', class: '_1', eyebrow: 'first' },
 		{ href: '/services', label: 'SERVICES', num: '02', class: '_2', eyebrow: 'second' },
-		{ href: '/work', label: 'PROJECTS', num: '03', class: '_3', eyebrow: 'third' },
+		{ href: '/project', label: 'PROJECTS', num: '03', class: '_3', eyebrow: 'third' },
 		{ href: '/blog', label: 'Blog', num: '04', class: '_4', eyebrow: 'fourth' },
 		{ href: '/contact', label: 'CONTACT', num: '05', class: '_5', eyebrow: 'fifth' }
 	];

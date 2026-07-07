@@ -29,7 +29,7 @@ export type SeoData = {
 	imageAlt?: string;
 	imageWidth?: number;
 	imageHeight?: number;
-	/** Pathname, e.g. `/about` or `/work/argon-intelligence` */
+	/** Pathname, e.g. `/about` or `/project/argon-intelligence` */
 	path?: string;
 	type?: OgType;
 	noindex?: boolean;
@@ -250,10 +250,10 @@ export function seoForWork(): SeoData {
 		title: 'Projects',
 		description:
 			'Selected software and security projects by Ibraheem Uthman — analytics platforms, literary journals, secure CI/CD, and cloud hardening.',
-		path: '/work',
+		path: '/project',
 		jsonLd: breadcrumbJsonLd([
 			{ name: 'Home', path: '/' },
-			{ name: 'Projects', path: '/work' }
+			{ name: 'Projects', path: '/project' }
 		])
 	};
 }
@@ -285,7 +285,7 @@ export function seoForContact(): SeoData {
 }
 
 export function seoForProject(project: Project): SeoData {
-	const path = `/work/${project.slug}`;
+	const path = `/project/${project.slug}`;
 	return {
 		title: `${project.title} | Projects`,
 		description: project.description,
@@ -297,7 +297,7 @@ export function seoForProject(project: Project): SeoData {
 			projectJsonLd(project, path),
 			breadcrumbJsonLd([
 				{ name: 'Home', path: '/' },
-				{ name: 'Projects', path: '/work' },
+				{ name: 'Projects', path: '/project' },
 				{ name: project.title, path }
 			])
 		]
@@ -338,7 +338,7 @@ export const SITEMAP_STATIC_PATHS = [
 	'/',
 	'/about',
 	'/services',
-	'/work',
+	'/project',
 	'/blog',
 	'/contact'
 ] as const;
@@ -347,7 +347,7 @@ export const SITEMAP_PRIORITY: Record<string, number> = {
 	'/': 1.0,
 	'/about': 0.9,
 	'/services': 0.9,
-	'/work': 0.9,
+	'/project': 0.9,
 	'/blog': 0.8,
 	'/contact': 0.8
 };
@@ -356,7 +356,7 @@ export const SITEMAP_CHANGEFREQ: Record<string, string> = {
 	'/': 'weekly',
 	'/about': 'monthly',
 	'/services': 'monthly',
-	'/work': 'weekly',
+	'/project': 'weekly',
 	'/blog': 'weekly',
 	'/contact': 'yearly'
 };

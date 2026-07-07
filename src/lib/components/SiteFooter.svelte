@@ -37,7 +37,7 @@
 						<div class="link-list-footer">
 							<a href="/" class="link-footer" class:w--current={path === '/'}>Home</a>
 							<a href="/about" class="link-footer" class:w--current={path === '/about'}>About</a>
-							<a href="/work" class="link-footer" class:w--current={path.startsWith('/work')}>Work</a>
+							<a href="/project" class="link-footer" class:w--current={path.startsWith('/project')}>Projects</a>
 							<a href="/contact" class="link-footer" class:w--current={path === '/contact'}>Contact</a>
 						</div>
 					</div>
