@@ -55,6 +55,10 @@ export type Project = {
 	year: string;
 	heroDescription: string;
 	sections: ProjectSection[];
+	/** Public URL for the live project — omit until available (e.g. GitHub repos). */
+	liveUrl?: string;
+	/** Button label override; defaults to VISIT {hostname}. */
+	liveUrlLabel?: string;
 };
 
 const submiranImage = projectImage('/images/submiran.png', 1028, 661);
@@ -83,6 +87,7 @@ export const projects: Project[] = [
 		service: 'FULL-STACK SAAS',
 		client: 'SUBMIRAN',
 		year: '2026',
+		liveUrl: 'https://submiran.com',
 		heroDescription:
 			'Poetry magazines, indie presses, and writers sending work into open calls. One desk to run a reading period, track every manuscript, and send a clear answer when the decision is made.',
 		sections: [
@@ -114,6 +119,7 @@ export const projects: Project[] = [
 		service: 'FULL-STACK',
 		client: 'ARGON ANALYTICS',
 		year: '2025',
+		liveUrl: 'https://argon.africa',
 		heroDescription:
 			'Research and data analytics across African markets, delivered through a public site, an institutional intelligence platform, and an admin console for editorial and access workflows.',
 		sections: [
@@ -146,6 +152,7 @@ export const projects: Project[] = [
 		service: 'WEB PLATFORM',
 		client: 'THE MAAR REVIEW',
 		year: '2026',
+		liveUrl: 'https://themaarreview.com.ng',
 		heroDescription:
 			'Vanguard of Artistry. A value-driven creative house publishing poetry, visual art, fiction, and non-fiction through a journal built for readers and contributors alike.',
 		sections: [

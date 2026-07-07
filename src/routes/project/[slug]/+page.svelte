@@ -2,6 +2,7 @@
 	import HeroProduct from '$lib/components/work/HeroProduct.svelte';
 	import ProjectTextSection from '$lib/components/work/ProjectTextSection.svelte';
 	import ProjectFeatureImage from '$lib/components/work/ProjectFeatureImage.svelte';
+	import ProjectVisitLink from '$lib/components/work/ProjectVisitLink.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import type { PageData } from './$types';
@@ -21,4 +22,5 @@
 		<ProjectFeatureImage image={data.project.secondaryImage} />
 	{/if}
 {/each}
+<ProjectVisitLink project={data.project} />
 <CtaSection />
