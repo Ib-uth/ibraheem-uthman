@@ -6,11 +6,14 @@ import {
 	DEFAULT_OG_IMAGE_ALT,
 	DEFAULT_OG_IMAGE_HEIGHT,
 	DEFAULT_OG_IMAGE_WIDTH,
+	DEFAULT_SOCIAL_DESCRIPTION,
+	META_DESCRIPTION_MAX,
 	SITE_EMAIL,
 	SITE_LOCATION,
 	SITE_NAME,
 	SITE_TAGLINE,
 	SITE_URL,
+	SOCIAL_DESCRIPTION_MAX,
 	SOCIAL_PROFILES
 } from '$lib/constants/site';
 
@@ -20,6 +23,8 @@ export type SeoData = {
 	/** Page title without site suffix — formatted automatically unless `rawTitle` is set. */
 	title: string;
 	description?: string;
+	/** Override for og:description / twitter:description (~120 chars). */
+	socialDescription?: string;
 	image?: string;
 	imageAlt?: string;
 	imageWidth?: number;
@@ -71,7 +76,14 @@ export function truncateDescription(text: string, max = 155): string {
 }
 
 export function buildSeo(data: SeoData) {
-	const description = truncateDescription(data.description ?? DEFAULT_DESCRIPTION);
+	const description = truncateDescription(
+		data.description ?? DEFAULT_DESCRIPTION,
+		META_DESCRIPTION_MAX
+	);
+	const socialDescription = truncateDescription(
+		data.socialDescription ?? data.description ?? DEFAULT_SOCIAL_DESCRIPTION,
+		SOCIAL_DESCRIPTION_MAX
+	);
 	const canonical = buildCanonicalUrl(data.path ?? '/');
 	const ogImage = resolveOgImage(data.image);
 	const usesDefaultImage = !data.image;
@@ -80,6 +92,7 @@ export function buildSeo(data: SeoData) {
 	return {
 		title: pageTitle,
 		description,
+		socialDescription,
 		canonical,
 		ogImage,
 		ogImageAlt: data.imageAlt ?? (usesDefaultImage ? DEFAULT_OG_IMAGE_ALT : data.title),
@@ -199,6 +212,8 @@ export function seoForHome(): SeoData {
 		title: SITE_TAGLINE,
 		description:
 			'Ibraheem Uthman builds full-stack systems, secure APIs, and detection pipelines from Abuja, Nigeria. Software engineering, DevSecOps, and cloud security.',
+		socialDescription:
+			'Full-stack and security engineer in Abuja. Systems, secure APIs, detection pipelines, and DevSecOps.',
 		path: '/',
 		jsonLd: [personJsonLd, websiteJsonLd, professionalServiceJsonLd]
 	};

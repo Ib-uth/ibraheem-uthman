@@ -25,7 +25,7 @@
 
 	<!-- Open Graph -->
 	<meta property="og:title" content={seo.title} />
-	<meta property="og:description" content={seo.description} />
+	<meta property="og:description" content={seo.socialDescription} />
 	<meta property="og:image" content={seo.ogImage} />
 	<meta property="og:image:secure_url" content={seo.ogImage} />
 	<meta property="og:image:alt" content={seo.ogImageAlt} />
@@ -46,7 +46,7 @@
 	<meta name="twitter:site" content={TWITTER_HANDLE} />
 	<meta name="twitter:creator" content={TWITTER_HANDLE} />
 	<meta name="twitter:title" content={seo.title} />
-	<meta name="twitter:description" content={seo.description} />
+	<meta name="twitter:description" content={seo.socialDescription} />
 	<meta name="twitter:image" content={seo.ogImage} />
 	<meta name="twitter:image:alt" content={seo.ogImageAlt} />
 

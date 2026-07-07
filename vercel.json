@@ -1,5 +1,13 @@
 {
   "installCommand": "pnpm install",
   "buildCommand": "pnpm build",
-  "framework": "sveltekit"
+  "framework": "sveltekit",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "ibraheemuthman.com" }],
+      "destination": "https://www.ibraheemuthman.com/:path*",
+      "permanent": true
+    }
+  ]
 }

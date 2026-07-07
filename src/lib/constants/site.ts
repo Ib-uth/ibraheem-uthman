@@ -1,7 +1,7 @@
 /** Canonical site URL — override via PUBLIC_SITE_URL env at build time. */
 export const SITE_URL =
 	(typeof import.meta.env !== 'undefined' && import.meta.env.PUBLIC_SITE_URL) ||
-	'https://ibraheemuthman.com';
+	'https://www.ibraheemuthman.com';
 
 export const SITE_NAME = 'Ibraheem Uthman';
 
@@ -12,10 +12,19 @@ export const DEFAULT_DESCRIPTION =
 
 export const DEFAULT_OG_IMAGE = '/images/ibraheem-uthman-og.jpg';
 
-export const DEFAULT_OG_IMAGE_WIDTH = 2355;
-export const DEFAULT_OG_IMAGE_HEIGHT = 2491;
+export const DEFAULT_OG_IMAGE_WIDTH = 1200;
+export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 export const DEFAULT_OG_IMAGE_ALT =
 	'Portrait of Ibraheem Uthman, software and security engineer based in Abuja, Nigeria';
+
+export const DEFAULT_SOCIAL_DESCRIPTION =
+	'Full-stack and security engineer in Abuja. Systems, secure APIs, detection pipelines, and DevSecOps.';
+
+/** Max length for `<meta name="description">` (search snippets). */
+export const META_DESCRIPTION_MAX = 155;
+
+/** Max length for og:description / twitter:description (social previews). */
+export const SOCIAL_DESCRIPTION_MAX = 120;
 
 export const SITE_TAGLINE = 'Software & Security Engineer';
 
