@@ -12,8 +12,8 @@ export const DEFAULT_DESCRIPTION =
 
 export const DEFAULT_OG_IMAGE = '/images/ibraheem-uthman-og.jpg';
 
-export const DEFAULT_OG_IMAGE_WIDTH = 1200;
-export const DEFAULT_OG_IMAGE_HEIGHT = 630;
+export const DEFAULT_OG_IMAGE_WIDTH = 2355;
+export const DEFAULT_OG_IMAGE_HEIGHT = 2491;
 export const DEFAULT_OG_IMAGE_ALT =
 	'Portrait of Ibraheem Uthman, software and security engineer based in Abuja, Nigeria';
 
